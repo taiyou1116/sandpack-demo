@@ -29,7 +29,7 @@ const files = {
 
 function App() {
   return (
-    <div className='App'>
+    <div className=' h-[calc(100vh-4rem)]'>
       <SandpackProvider 
         template="react" 
         files={files} 
@@ -39,13 +39,13 @@ function App() {
           }
         }}
         theme={nightOwl}
+        className=''
       >
-        <SandpackLayout style={{ border: 'solid hotpink' }}>
-          <SandpackPreview />
-          <SandpackCodeEditor />
-        </SandpackLayout>
+        <div className=' flex flex-col gap-5 h-[calc(100vh-4rem)]' >
+          <SandpackPreview className=' h-1/2' />
+          <SandpackCodeEditor className=' h-1/2' />
+        </div>
       </SandpackProvider>
-      <p>自由にコードを変更してください。</p>
     </div>
   );
 }
