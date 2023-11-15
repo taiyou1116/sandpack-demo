@@ -29,7 +29,7 @@ const files = {
 
 function App() {
   return (
-    <div className=' h-[calc(100vh-4rem)]'>
+    <div className=' h-[calc(100vh-4rem)] '>
       <SandpackProvider 
         template="react" 
         files={files} 
@@ -41,10 +41,10 @@ function App() {
         theme={nightOwl}
         className=''
       >
-        <div className=' flex flex-col gap-5 h-[calc(100vh-4rem)]' >
+        <SandpackLayout className=' flex flex-col w-2/3 h-[calc(100vh-4rem)]' >
           <SandpackPreview className=' h-1/2' />
           <SandpackCodeEditor className=' h-1/2' />
-        </div>
+        </SandpackLayout>
       </SandpackProvider>
     </div>
   );

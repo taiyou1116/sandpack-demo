@@ -8,7 +8,7 @@ export const P5WrapperSource = `
 
     const Sketch = (p: p5) => {
       p.setup = () => {
-        p.createCanvas(400, 400);
+        p.createCanvas(800, 350);
       };
 
       p.draw = () => {
