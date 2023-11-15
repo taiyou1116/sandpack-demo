@@ -1,7 +1,7 @@
 import './App.css';
-import { SandpackFileExplorer, SandpackLayout } from '@codesandbox/sandpack-react';
+import { SandpackLayout } from '@codesandbox/sandpack-react';
 import { nightOwl, aquaBlue } from "@codesandbox/sandpack-themes";
-import { P5WrapperSource } from './View';
+import viewContent from './View.view';
 import { 
   SandpackProvider, 
   SandpackCodeEditor,
@@ -10,7 +10,7 @@ import {
 
 const files = {
   '/View.tsx': {
-    code: P5WrapperSource,
+    code: viewContent,
     readOnly: true,
   },
   '/App.js': `
@@ -49,7 +49,7 @@ function App() {
         <SandpackLayout className=' flex flex-col w-2/3 h-[calc(100vh-4rem)]' >
           <SandpackPreview className=' h-1/2' />
           <div>
-            <SandpackFileExplorer />
+            {/* <SandpackFileExplorer /> */}
             <SandpackCodeEditor
               showTabs
               showLineNumbers={true}
