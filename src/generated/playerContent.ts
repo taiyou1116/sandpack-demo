@@ -1,2 +1,2 @@
-const playerContent: string = "\nconst player = {\n  playerX: 0,\n  height: 0,\n}\n\nexport default player\n";
+const playerContent: string = "const player = {\n    playerX: 0,\n    playerY: 0,\n    speed: 0,\n  \n    moveLeft: function() {\n      this.playerX -= this.speed;\n    },\n  \n    moveRight: function() {\n      this.playerX += this.speed;\n    },\n  \n    jump: function() {\n      this.playerY -= 10; // ジャンプの高さ\n    }\n  };\n  \n  export default player;\n  ";
 export default playerContent;
