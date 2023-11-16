@@ -42,8 +42,8 @@ function App() {
         }}
         theme={aquaBlue}
         options={{
-          visibleFiles: ["/App.js", "/View.tsx"],
-          activeFile: "/App.js",
+          visibleFiles: ["/View.tsx"],
+          activeFile: "View.tsx",
         }}
       >
         <SandpackLayout className=' flex flex-col w-2/3 h-[calc(100vh-4rem)]' >
