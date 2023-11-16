@@ -1,7 +1,7 @@
 import './App.css';
 import { SandpackLayout } from '@codesandbox/sandpack-react';
 import { nightOwl, aquaBlue } from "@codesandbox/sandpack-themes";
-import viewContent from './View.view';
+import viewContent from './generated/viewContent';
 import { 
   SandpackProvider, 
   SandpackCodeEditor,
@@ -11,7 +11,7 @@ import {
 const files = {
   '/View.tsx': {
     code: viewContent,
-    readOnly: true,
+    // readOnly: true,
   },
   '/App.js': `
     import React from 'react';
@@ -48,17 +48,14 @@ function App() {
       >
         <SandpackLayout className=' flex flex-col w-2/3 h-[calc(100vh-4rem)]' >
           <SandpackPreview className=' h-1/2' />
-          <div>
-            {/* <SandpackFileExplorer /> */}
             <SandpackCodeEditor
-              showTabs
-              showLineNumbers={true}
-              showInlineErrors
-              wrapContent
-              closableTabs
+              // showTabs
+              // showLineNumbers={true}
+              // showInlineErrors
+              // wrapContent
+              // closableTabs
               className=' h-1/2' 
             />
-          </div>
         </SandpackLayout>
       </SandpackProvider>
     </div>
