@@ -10,15 +10,15 @@ const __dirname = path.dirname(__filename);
 const outputDir = path.join(__dirname, 'src', 'generated');
 
 // 読み込むファイルのパス
-const filePath = path.join(__dirname, 'src', 'View.tsx');
+const filePath = path.join(__dirname, 'src', 'player.js');
 // 出力ファイルのパス
-const outputFilePath = path.join(outputDir, 'viewContent.ts');
+const outputFilePath = path.join(outputDir, 'playerContent.ts');
 
 // ファイルの内容を読み込む
 const fileContent = fs.readFileSync(filePath, 'utf8');
 
 // TypeScriptの内容を出力
-const outputContent = `const viewContent: string = ${JSON.stringify(fileContent)};\nexport default viewContent;`;
+const outputContent = `const playerContent: string = ${JSON.stringify(fileContent)};\nexport default playerContent;`;
 
 // 結果をファイルに書き出す
 fs.writeFileSync(outputFilePath, outputContent);

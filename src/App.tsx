@@ -1,7 +1,7 @@
 import './App.css';
 import { SandpackLayout } from '@codesandbox/sandpack-react';
 import { nightOwl, aquaBlue } from "@codesandbox/sandpack-themes";
-import viewContent from './generated/viewContent';
+import player from './generated/playerContent';
 import { 
   SandpackProvider, 
   SandpackCodeEditor,
@@ -9,25 +9,34 @@ import {
   } from '@codesandbox/sandpack-react';
 
 const files = {
-  '/View.tsx': {
-    code: viewContent,
-    // readOnly: true,
+  "player.js": {
+    code: player
   },
-  '/App.js': `
-    import React from 'react';
-    import P5Wrapper from './View';
 
-    const App = () => {
-      return (
-        <div>
-          <P5Wrapper />
-        </div>
-      );
+  "/App.js": {
+    code: `
+    import p5 from 'p5';
+    import player from './player';
+
+    // p5.js スケッチの定義
+    const sketch = (p) => {
+      p.setup = () => {
+        p.createCanvas(800, 350);
+        p.background(220);
+      };
+
+      p.draw = () => {
+        p.rect(player.playerX, player.height / 2, 50, 50); // プレイヤーの描画
+      };
     };
 
-    export default App;
-  `,
-};
+    // p5.js スケッチのインスタンス化
+    new p5(sketch);
+
+    export default sketch;
+    `,
+  }
+}
 
 function App() {
   return (
@@ -42,18 +51,16 @@ function App() {
         }}
         theme={aquaBlue}
         options={{
-          visibleFiles: ["/View.tsx"],
-          activeFile: "View.tsx",
+          visibleFiles: ["/App.js", "player.js"],
+          activeFile: "App.js",
         }}
       >
         <SandpackLayout className=' flex flex-col w-2/3 h-[calc(100vh-4rem)]' >
           <SandpackPreview className=' h-1/2' />
             <SandpackCodeEditor
-              // showTabs
-              // showLineNumbers={true}
-              // showInlineErrors
-              // wrapContent
-              // closableTabs
+              showTabs
+              showLineNumbers={true}
+              showInlineErrors
               className=' h-1/2' 
             />
         </SandpackLayout>
