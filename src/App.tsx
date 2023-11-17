@@ -1,6 +1,6 @@
 
 import {homeContent, squareContent} from './generated/playerContent';
-import Templete from './Templete';
+import Templete from './components/Templete';
 
 const files = {
   "square.js": {

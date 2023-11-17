@@ -5,11 +5,11 @@ import { squareX, squareY } from './square';
 const sketch = (p) => {
   p.setup = () => {
     p.createCanvas(800, 350);
-    p.background(220);
+    p.background(0);
   };
 
   p.draw = () => {
-    p.rect(200, 200, squareX, squareY);
+    p.rect(350, 150, squareX, squareY);
   };
 };
 
