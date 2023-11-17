@@ -1,18 +1,23 @@
-import React from 'react'
-import Templete from '../components/Templete'
+// import React from 'react'
+// import Templete from '../components/Templete'
 
-const files = {
+// const files = {
+//   "square.js": {
+//     code: 
+//   },
 
-}
-
-export default function Home() {
-  return (
-    <div>
-      <Templete 
-        files={files}
-        visibleFiles={["App.js", "player.js"]}
-        activeFile='App.js'
-      />
-    </div>
-  )
-}
+//   "/App.js": {
+//     code: 
+//   }
+// }
+// export default function Home() {
+//   return (
+//     <div>
+//       <Templete 
+//         files={files}
+//         visibleFiles={["App.js", "player.js"]}
+//         activeFile='App.js'
+//       />
+//     </div>
+//   )
+// }

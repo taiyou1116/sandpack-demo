@@ -8,6 +8,7 @@ import {
 import ModalComponent from './Modal';
 import DescriptionModal from './DescriptionModal';
 import { useState } from 'react';
+import Description from './variable/Description';
 
 type TempleteProps = {
   files: SandpackFiles,
@@ -27,7 +28,7 @@ function Templete(props: TempleteProps) {
   return (
     <div className='flex p-10 gap-5'>
       <div className=' flex w-2/5 bg-black rounded-lg justify-center p-5'>
-        <h1 className=' text-gray-300'>変数ってなんだろう?</h1>
+        <Description />
       </div>
       <div className=' h-[calc(100vh-4rem)] w-3/5 '>
         <SandpackProvider 
