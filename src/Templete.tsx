@@ -17,12 +17,8 @@ type TempleteProps = {
   
     return (
       <div className='flex p-10 gap-5'>
-        {/* 進捗はしまえる */}
-        <div className=' flex w-1/5 bg-slate-400 rounded-lg justify-center p-5'>
-          <h1>進捗</h1>
-        </div>
-        <div className=' flex w-1/5 bg-black rounded-lg justify-center p-5'>
-          <h1 className=' text-gray-300'>ヒント</h1>
+        <div className=' flex w-2/5 bg-black rounded-lg justify-center p-5'>
+          <h1 className=' text-gray-300'>変数ってなんだろう?</h1>
         </div>
         <div className=' h-[calc(100vh-4rem)] w-3/5 '>
           <SandpackProvider 

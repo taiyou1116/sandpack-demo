@@ -1,2 +1,2 @@
-const playerContent: string = "const player = {\n    playerX: 0,\n    playerY: 0,\n    speed: 0,\n  \n    moveLeft: function() {\n      this.playerX -= this.speed;\n    },\n  \n    moveRight: function() {\n      this.playerX += this.speed;\n    },\n  \n    jump: function() {\n      this.playerY -= 10; // ジャンプの高さ\n    }\n};\n  \nexport default player;\n  ";
-export default playerContent;
+export const homeContent: string = "import p5 from 'p5';\nimport { squareX, squareY } from './square';\n\n// p5.js スケッチの定義\nconst sketch = (p) => {\n  p.setup = () => {\n    p.createCanvas(800, 350);\n    p.background(220);\n  };\n\n  p.draw = () => {\n    p.rect(200, 200, squareX, squareY);\n  };\n};\n\n// p5.js スケッチのインスタンス化\nnew p5(sketch);\n\nexport default sketch;";
+export const squareContent: string = "// これが変数\nlet squareX = 100;\nlet squareY = 100;\n\n// 触らないで!!\nexport { squareX, squareY }";
