@@ -5,12 +5,13 @@ import url from 'url';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const __inputDir = path.join(__dirname, 'src', 'preGenerate');
 
 // 出力ディレクトリのパス
 const outputDir = path.join(__dirname, 'src', 'generated');
 
 // 読み込むファイルのパス
-const filePath = path.join(__dirname, 'src', 'player.js');
+const filePath = path.join(__inputDir, 'player.js');
 // 出力ファイルのパス
 const outputFilePath = path.join(outputDir, 'playerContent.ts');
 
