@@ -1,4 +1,4 @@
-import { SandpackFiles, SandpackLayout } from '@codesandbox/sandpack-react';
+import { SandpackCodeViewer, SandpackFiles, SandpackLayout, SandpackThemeProvider, SandpackTranspiledCode } from '@codesandbox/sandpack-react';
 import { nightOwl, aquaBlue } from "@codesandbox/sandpack-themes";
 import { 
   SandpackProvider, 
@@ -9,6 +9,7 @@ import ModalComponent from './Modal';
 import DescriptionModal from './DescriptionModal';
 import { useState } from 'react';
 import Description from './variable/Description';
+import SimpleCodeViewer from './CodeViewer';
 
 type TempleteProps = {
   files: SandpackFiles,
@@ -43,11 +44,20 @@ function Templete(props: TempleteProps) {
           options={{
             visibleFiles:visibleFiles,
             activeFile: activeFile,
+            recompileMode: "delayed",
+            recompileDelay: 500,
           }}
         >
-          <SandpackLayout className=' flex flex-col w-full h-[calc(100vh-4rem)]' >
+          <SandpackLayout className=' flex flex-col w-full h-[calc(100vh-4rem)] ' >
             <SandpackPreview 
-              className=' h-1/2' 
+              className=' h-1/2 '
+              showOpenInCodeSandbox={false}
+              showRefreshButton={true} 
+              // actionsChildren={
+              //   <button className=' bg-white' onClick={() => window.alert("Bug reported!")}>
+              //     Report bug
+              //   </button>
+              // }
             />
               <SandpackCodeEditor
                 showTabs
@@ -55,6 +65,7 @@ function Templete(props: TempleteProps) {
                 showInlineErrors
                 className=' h-1/2' 
               />
+              <SimpleCodeViewer />
           </SandpackLayout>
         </SandpackProvider>
       </div>
